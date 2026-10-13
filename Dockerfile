@@ -1,4 +1,4 @@
-FROM node:20-bullseye-slim
+FROM node:20-bookworm-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates unzip curl \
@@ -6,7 +6,7 @@ RUN apt-get update \
 
 WORKDIR /app
 
-# دانلود آخرین نسخه‌ی Xray-core
+# دانلود آخرین نسخهی Xray-core
 RUN curl -fL -o /tmp/xray.zip \
       https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip \
     && mkdir -p /app/bin \
